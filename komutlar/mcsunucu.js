@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const request = require('request');
 var mcPort = 25565
-var prefix = "xe!";
+var prefix = "?";
 exports.run = (client, message, args) => {
   if (message.content.startsWith(prefix + "mcsunucu")) {
       var url = 'http://mcapi.us/server/status?ip=' + args[0] + '&port=' + mcPort;
@@ -36,5 +36,5 @@ exports.conf = {
 exports.help = {
   name: 'mcsunucu',
   description: 'Minecraft sunucu bilgisini verir.',
-  usage: 'mcsunucu <sunucu IP>'
+  usage: 'mcserver <sunucu IP>'
 };
