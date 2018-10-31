@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const moment = require("moment");
-const colors = require("colors");
 var green = process.env.NODE_DISABLE_COLORS ? '' : '\x1b[32m';
 
 require("moment-duration-format");
