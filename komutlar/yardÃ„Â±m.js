@@ -5,12 +5,12 @@ var prefix = ayarlar.prefix;
 
 exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
-  .setTitle("Kralbot Komut Listesi")
+  .setTitle("Komut Listesi")
   .setDescription('')
-  .setColor(random)
+  .setColor(0x00ffff)
       .setDescription('**•** k?eğlence = Eğlence komutları\n**•** k?kişisel = Kişisel komutlar\n**•** k?yetkili = Yetkili komutları\n**•** k?oyun = Oyun komutları\n**•** k?müzik = Müzik komutları\n**•** k?destek = Destek komutları')
-      .addField("» Linkler", `[Bot Davet Linki](https://discordapp.com/api/oauth2/authorize?client_id=498573744030351377&permissions=2146958583&scope=bot)` + "**\n**"+`[Destek Sunucusu](https://discord.gg/gwmBhyV)`, false)
-      .setFooter('Örnek kullanım: k?eğlence')
+      .addField("» Linkler", `[Bot Davet Linki](https://discordapp.com/api/oauth2/authorize?client_id=498573744030351377&permissions=2146958583&scope=bot)` + "**\n**"+`[Botun Sitesi](https://kralbotdiscord.wordpress.com/)`+ "**\n**"+`[Destek Sunucusu](https://discord.gg/gwmBhyV)`, false)
+      .setFooter('Örnek kullanım: dve!eğlence')
 
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
@@ -20,7 +20,7 @@ exports.run = (client, message, params) => {
     let command = params[0];
     if (client.commands.has(command)) {
       command = client.commands.get(command);
-      message.author.send('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDoğru kullanım: k? `${command.help.usage}`);
+      message.author.send('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDoğru kullanım: ` + prefix + `${command.help.usage}`);
     }
   }
 };
