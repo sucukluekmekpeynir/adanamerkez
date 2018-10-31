@@ -36,5 +36,5 @@ exports.conf = {
 exports.help = {
   name: 'mcsunucu',
   description: 'Minecraft sunucu bilgisini verir.',
-  usage: 'mcserver <sunucu IP>'
+  usage: 'mcsunucu <sunucu IP>'
 };
