@@ -22,7 +22,7 @@ client.user.setPresence({
 var oyun = [
         "k?yardım k?davet (k?yardım Komutu düzenleniyor.) ",
         "Kralbot Sürümü 2.0.0.0 Olarak Güncellenmiştir! https://kralbotdiscord.wordpress.com/",
-        "Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`"             
+        " ` + client.channels.size + ` Kanala ` + client.guilds.size + ` Sunucuya ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Adet Kullanıcıya Hizmet Veriyorum "             
     ];
 
     setInterval(function() {
