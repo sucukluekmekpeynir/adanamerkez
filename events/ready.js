@@ -14,7 +14,7 @@ module.exports = client => {
 client.user.setUsername(" Kralbot ");
 client.user.setPresence({
         game: {
-            name: `Patates`,
+            name: `4 Kafadar Oyunda`,
             type: 'WATCHING'
         },
         status: 'dnd'
@@ -22,7 +22,7 @@ client.user.setPresence({
 var oyun = [
         "k?yardım k?davet (k?yardım Komutu düzenleniyor.) ",
         "Kralbot Sürümü 2.0.0.0 Olarak Güncellenmiştir! https://kralbotdiscord.wordpress.com/",
-        " ` + client.channels.size + ` Kanala ` + client.guilds.size + ` Sunucuya ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Adet Kullanıcıya Hizmet Veriyorum "             
+        "4 Kafadar Oyunda İzliyor  "             
     ];
 
     setInterval(function() {
