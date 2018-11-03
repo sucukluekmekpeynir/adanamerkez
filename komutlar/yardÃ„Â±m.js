@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
   .setColor(0x00ffff)
       .setDescription('**•** k?eğlence = Eğlence komutları\n**•** k?kişisel = Kişisel komutlar\n**•** k?yetkili = Yetkili komutları\n**•** k?oyun = Oyun komutları\n**•** k?müzik = Müzik komutları\n**•** k?destek = Destek komutları')
       .addField("» Linkler", `[Bot Davet Linki](https://discordapp.com/api/oauth2/authorize?client_id=498573744030351377&permissions=2146958583&scope=bot)` + "**\n**"+`[Botun Sitesi](https://kralbotdiscord.wordpress.com/)`+ "**\n**"+`[Destek Sunucusu](https://discord.gg/gwmBhyV)`, false)
-      .setFooter('Örnek kullanım: dve!eğlence')
+      .setFooter('Örnek kullanım: k?eğlence')
 
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
