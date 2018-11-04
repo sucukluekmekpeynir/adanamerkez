@@ -371,7 +371,7 @@ client.on("message", async message => {
     if (message.content.toLowerCase() === prefix + "nsfw") {
  if(message.channel.nsfw || message.channel.type === 'dm'){
    let embed = new Discord.RichEmbed()
-   .setTitle('+18')
+   .setTitle('+18 Gözlerini Kapa Bence Sonra Uyurmadı Deme :smile: ')
    .setColor(0x00AE86)
    .setImage(("https://cdn.boobbot.us/4k/4k"+ Math.floor(Math.random() * 1460)+".jpg"))
    message.channel.send(embed)
