@@ -9,7 +9,8 @@ const cevaplar = [
     "imkansız",
     "Ah Hayır Beni Kandıramassın!",
     "Ah Hayır Beni Kandıramassın Patates İzliyorsun",
-    "Ah Hayır Beni Kandıramassın Boş Yapıyorsun!"
+    "Ah Hayır Beni Kandıramassın Boş Yapıyorsun!",
+    "Adanadan Mı Geldin Kardeş Beni Sal Bi :smile: "
 ];
 
 exports.run = function(client, message, args) {
