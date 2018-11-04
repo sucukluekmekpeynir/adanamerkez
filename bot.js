@@ -367,4 +367,22 @@ client.on("guildMemberAdd", member => {
 
 ////////////////////////
 
+client.on("message", async message => {
+    if (message.content.toLowerCase() === prefix + "nsfw") {
+ if(message.channel.nsfw || message.channel.type === 'dm'){
+   let embed = new Discord.RichEmbed()
+   .setTitle('+18')
+   .setColor(0x00AE86)
+   .setImage(("https://cdn.boobbot.us/4k/4k"+ Math.floor(Math.random() * 1460)+".jpg"))
+   message.channel.send(embed)
+}
+ else{
+       message.channel.send({embed: {
+color: Math.floor(Math.random() * (0xFFFFAD + 2)),
+description: ('Bu kanal NSFW kanalı değil.')
+ }})
+ }
+}
+});
+
 client.login(process.env.BOT_TOKEN);
