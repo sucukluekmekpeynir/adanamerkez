@@ -7,6 +7,9 @@ const cevaplar = [
     "olabilir",
     "daha sonra tekrar sor",
     "imkansız"
+    "Ah Hayır Beni Kandıramassın!"
+    "Ah Hayır Beni Kandıramassın Patates İzliyorsun"
+    "Ah Hayır Beni Kandıramassın Boş Yapıyorsun!"
 ];
 
 exports.run = function(client, message, args) {
@@ -27,7 +30,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: '8ball', 
-  description: 'Sihirli 8ball sorularınızı cevaplar',
-  usage: '8ball <soru>'
+  name: 'sor', 
+  description: 'Sorularınızı Cevaplar',
+  usage: 'k?sor <soru>'
 };
