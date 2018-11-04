@@ -387,7 +387,7 @@ description: ('Bu kanal NSFW kanalı değil.')
 
 client.on("message", msg => {
 
-    const kufur = ["discordapp", ".com", ".net", ".xyz", ".tk", "gulu", ".pw", ".io", ".me", ".gg", "www.", "https", "am", "http", "yarrak", "amcık",  ".gl"];
+    const kufur = ["discordapp", ".com", ".net", ".xyz", ".tk", "gulu", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl"];
     if (kufur.some(word => msg.content.includes(word)) ) {
         msg.delete()
         msg.reply("Reklam Yapma Kardeşim Seni Yetkililere Söyledim :angry: :negative_squared_cross_mark: ")
