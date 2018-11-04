@@ -6,9 +6,9 @@ const cevaplar = [
     "belki",
     "olabilir",
     "daha sonra tekrar sor",
-    "imkansız"
-    "Ah Hayır Beni Kandıramassın!"
-    "Ah Hayır Beni Kandıramassın Patates İzliyorsun"
+    "imkansız",
+    "Ah Hayır Beni Kandıramassın!",
+    "Ah Hayır Beni Kandıramassın Patates İzliyorsun",
     "Ah Hayır Beni Kandıramassın Boş Yapıyorsun!"
 ];
 
