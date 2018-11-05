@@ -405,85 +405,6 @@ if (channel.type != 'text') return;
 
 });
 
-const discord = require('discord.js');
-exports.run = (client, message, args) => {
-
-  if (!message.guild) {
-  const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor(0xFF0000)
-  .setTimestamp()
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .addField('⚠ **Uyarı** ⚠', '`rol-ver` **adlı komutu özel mesajlarda kullanamazsın.**')
-  return message.author.sendEmbed(ozelmesajuyari); }
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Bunun için gerekli iznin yok');
-  let guild = message.guild
-  let rol = message.mentions.roles.first()  
-  let user = message.mentions.members.first() 
-
-  if (!user) return message.reply('**Kime Rol Verceğimi Yazmadın!**').catch(console.error);
-  if (rol.length < 1) return message.reply('**Rol idsini belirtmedin**');
-  message.channel.send(":white_check_mark: Başarı ile rol verildi.");
-user.addRole(rol);
-
-};
-
-exports.conf = {
-  enabled: true,
-  guildOnly: true,
-  aliases: ['rolver'],
-  permLevel: 3
-};
-
-exports.help = {
-  name: 'rol-ver',
-  description: 'İstediğiniz kişiyi istediğiniz rolü verir.',
-  usage: 'rol-ver [kullanıcı] [@rol]'
-};
-
-const client = new Discord.Client();
-const db = require('quick.db')
-client.on("message", async message => {
-  if(message.author.bot) return;
-  let prefix = await db.fetch(`prefix_${message.guild.id}`)
-  if(message.content.indexOf(prefix) !== 0) return;
-
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-
-
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  let commandfile = client.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(client, message, args)
-
-})
-
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
-  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Üzgünüm dostum, bunu yapamazsın.");
-  let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if(!rMember) return message.reply("O kullanıcıyı bulamadım, sen.");
-  let role = args.join(" ").slice(22);
-  if(!role) return message.reply("Bir rol belirtin!");
-  let gRole = message.guild.roles.find(`name`, role);
-  if(!gRole) return message.reply("Bu rolü bulamadım.");
-
-  if(!rMember.roles.has(gRole.id)) return message.reply("Böyle bir rolü yok.");
-  await(rMember.removeRole(gRole.id));
-
-  try{
-    await rMember.send(`RIP, ${gRole.name} rolünü kaybettin.`)
-  }catch(e){
-    message.channel.send(`RIP <@${rMember.id}>, ${gRole.name} rolünü kaybetti.`)
-  }
-}
-
-module.exports.help = {
-  name: "rol-al"
-}
-
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
   let joinRole = guild.roles.find('name', 'Üye'); 
@@ -501,13 +422,13 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.find('name', 'mod-log');
+  const channel = member.guild.channels.find('name', 'giriş-çıkış');
   if (!channel) return;
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setAuthor(member.user.username, member.user.avatarURL)
   .setThumbnail(member.user.avatarURL)
-  .setTitle(':outbox_tray: | Sunucudan ayrıldı')
+  .setTitle(' :outbox_tray: | Sunucudan ayrıldı')
   .setTimestamp()
   channel.sendEmbed(embed); 
 });
