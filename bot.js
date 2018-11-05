@@ -405,6 +405,8 @@ if (channel.type != 'text') return;
   let sChannel = channel.guild.channels.find('name', 'log');
   sChannel.send(`The channel ${channel} :warning: Kanalı Oluşturuldu :warning: `);
 
+});
+
 client.on('channelDelete', async channel => {
 
   console.log(`${channel.name} :warning: Kanalı Silindi :warning: `);
