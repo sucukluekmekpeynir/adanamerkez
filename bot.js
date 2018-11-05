@@ -395,4 +395,14 @@ description: ('Bu kanal NSFW kanalı değil.')
   }
 });
 
+client.on('channelCreate', async channel => {
+
+  console.log(`${channel.name} has been created.`);
+
+if (channel.type != 'text') return;
+  let sChannel = channel.guild.channels.find('name', 'log');
+  sChannel.send(`The channel ${channel} has been created`);
+
+});
+
 client.login(process.env.BOT_TOKEN);
