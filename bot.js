@@ -393,18 +393,16 @@ description: ('Bu kanal NSFW kanalı değil.')
       msg.guild.roles.find(s => s.name === rol).setColor("RANDOM")
       }, 9000);
   }
-})
-
 });
 
 client.on('channelCreate', async channel => {
 
-  console.log(`${channel.name} :warning: Kanalı Oluşturuldu :warning: `);
+  console.log(`${channel.name} has been created.`);
 
 if (channel.type != 'text') return;
-  let sChannel = channel.guild.channels.find('name', 'log');
-  sChannel.send(`The channel ${channel} :warning: Kanalı Oluşturuldu :warning: `);
+  let sChannel = channel.guild.channels.find('name', 'name channel here');
+  sChannel.send(`The channel ${channel} has been created`);
 
 });
-
+	    
 client.login(process.env.BOT_TOKEN);
