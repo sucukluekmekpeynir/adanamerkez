@@ -395,6 +395,8 @@ description: ('Bu kanal NSFW kanalı değil.')
   }
 })
 
+});
+
 client.on('channelCreate', async channel => {
 
   console.log(`${channel.name} :warning: Kanalı Oluşturuldu :warning: `);
@@ -411,6 +413,6 @@ if (channel.type != 'text') return;
   let sChannel = channel.guild.channels.find('name', 'log');
   sChannel.send(`${channel} :warning: Kanalı Silindi :warning: `);
 
-});
+})
 
 client.login(process.env.BOT_TOKEN);
