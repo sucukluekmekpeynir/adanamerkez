@@ -71,17 +71,17 @@ client.on('message', async msg => {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('RANDOM')
-    .setDescription(' <:| İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+    .setDescription(' :x: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle(' <:x:474973245477486612> | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+    .setTitle(' :x: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
 		}
 		if (!permissions.has('SPEAK')) {
 			 return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setTitle(' <:x:474973245477486612> | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
+      .setTitle(' :mute: | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
         }
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -92,7 +92,7 @@ client.on('message', async msg => {
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
 			 return msg.channel.sendEmbed(new Discord.RichEmbed)
-      .setTitle(`**✅ | Oynatma Listesi: **${playlist.title}** Kuyruğa Eklendi!**`)
+      .setTitle(`** :white_check_mark: | Oynatma Listesi: **${playlist.title}** Kuyruğa Eklendi!**`)
 		} else {
 			try {
 				var video = await youtube.getVideo(url);
@@ -100,7 +100,7 @@ client.on('message', async msg => {
 				try {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
-          
+         
 				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
          .setTitle('Kralbot | Şarkı Seçimi')
          .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
@@ -117,7 +117,7 @@ client.on('message', async msg => {
 						console.error(err);
 						 return msg.channel.sendEmbed(new Discord.RichEmbed()
             .setColor('0x36393E')
-            .setDescription('<:basarisiz:474973245477486612> | **Şarkı Değeri Belirtmediğiniz İçin Seçim İptal Edilmiştir**.'));
+            .setDescription(' :x: | **Şarkı Değeri Belirtmediğiniz İçin Seçim İptal Edilmiştir**.'));
                     }
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
@@ -125,7 +125,7 @@ client.on('message', async msg => {
 					console.error(err);
 					return msg.channel.sendEmbed(new Discord.RichEmbed()
           .setColor('0x36393E')
-          .setDescription('<:basarisiz:474973245477486612> | **Aradaım Fakat Hiç Bir Sonuç Çıkmadı**'));
+          .setDescription(' :x: | **Aradaım Fakat Hiç Bir Sonuç Çıkmadı**'));
                 }
             }
 			return handleVideo(video, msg, voiceChannel);
@@ -134,19 +134,19 @@ client.on('message', async msg => {
 	} else if (command === 'geç') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription(' <:basarisiz:474973245477486612> | **Lütfen öncelikle sesli bir kanala katılınız**.'));
+    .setDescription(' :speaker: | **Lütfen öncelikle sesli bir kanala katılınız**.'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
      .setColor('RANDOM')
-     .setTitle('<:basarisiz:474973245477486612> | **Hiç Bir Müzik Çalmamakta**'));                                              
+     .setTitle(' :x: | **Hiç Bir Müzik Çalmamakta**'));                                              
 		serverQueue.connection.dispatcher.end('**Müziği Geçtim!**');
 		return undefined;
 	} else if (command === 'durdur') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription('**<:basarisiz:474973245477486612> | Lütfen öncelikle sesli bir kanala katılınız.**'));
+    .setDescription('** :speaker: | Lütfen öncelikle sesli bir kanala katılınız.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
      .setColor('RANDOM')
-     .setTitle('<:basarisiz:474973245477486612> **| Hiç Bir Müzik Çalmamakta**'));                                              
+     .setTitle(' :speaker: | Hiç Bir Müzik Çalmamakta**'));                                              
 		msg.channel.send(`:stop_button: **${serverQueue.songs[0].title}** Adlı Müzik Durduruldu`);
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end('**Müzik Bitti**');
@@ -154,10 +154,10 @@ client.on('message', async msg => {
 	} else if (command === 'ses') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription('<:basarisiz:474973245477486612> **| Lütfen öncelikle sesli bir kanala katılınız.**'));
+    .setDescription( :' :speaker: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
      .setColor('RANDOM')
-     .setTitle('<:basarisiz:474973245477486612> | **Hiç Bir Müzik Çalmamakta**'));                                              
+     .setTitle(' :x: | **Hiç Bir Müzik Çalmamakta**'));                                              
 		if (!args[1]) return msg.channel.sendEmbed(new Discord.RichEmbed()
    .setTitle(`:loud_sound: Şuanki Ses Seviyesi: **${serverQueue.volume}**`)
     .setColor('RANDOM'))
@@ -168,17 +168,17 @@ client.on('message', async msg => {
     .setColor('RANDOM'));                             
 	} else if (command === 'çalan') {
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle("<:basarisiz:474973245477486612> | **Çalan Müzik Bulunmamakta**")
+    .setTitle(" :mute: | **Çalan Müzik Bulunmamakta**")
     .setColor('RANDOM'));
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle("Retdelta Müzik | Çalan")                            
+    .setTitle("Kralbot | Çalan")                            
     .addField('Başlık', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
     .addField("Süre", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
 	} else if (command === 'sıra') {
     let index = 0;
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle("<:basarisiz:474973245477486612> | **Sırada Müzik Bulunmamakta**")
+    .setTitle(" :x: | **Sırada Müzik Bulunmamakta**")
     .setColor('RANDOM'));
 		  return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
@@ -190,20 +190,20 @@ client.on('message', async msg => {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setTitle("**:pause_button: Müzik Senin İçin Durduruldu!**")
+      .setTitle(" :pause_button: Müzik Senin İçin Durduruldu!")
       .setColor('RANDOM'));
 		}
-		return msg.channel.send('<:basarisiz:474973245477486612> | **Çalan Müzik Bulunmamakta**');
+		return msg.channel.send(' :mute: | **Çalan Müzik Bulunmamakta**');
 	} else if (command === 'devam') {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setTitle("**:arrow_forward: Müzik Senin İçin Devam Etmekte!**")
+      .setTitle(" :arrow_forward: Müzik Senin İçin Devam Etmekte!**")
       .setColor('RANDOM'));
 		}
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle("**<:basarisiz:474973245477486612> | Çalan Müzik Bulunmamakta.**")
+    .setTitle("** :mute: | Çalan Müzik Bulunmamakta.**")
     .setColor('RANDOM'));
 	}
   
@@ -252,7 +252,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(`<:onayland:474982945304608769> **${song.title}** Adlı Müzik Kuyruğa Eklendi!`)
+    .setTitle(` :white_check_mark: **${song.title}** Adlı Müzik Kuyruğa Eklendi!`)
     .setColor('RANDOM'))
 	}
 	return undefined;
@@ -270,7 +270,7 @@ function play(guild, song) {
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
 		.on('end', reason => {
-			if (reason === '<:basarisiz:474973245477486612> | **Yayın Akış Hızı Yeterli Değil.**') console.log('Müzik Bitti.');
+			if (reason === ' :speedboat: | **Yayın Akış Hızı Yeterli Değil.**') console.log('Müzik Bitti.');
 			else console.log(reason);
 			serverQueue.songs.shift();
 			play(guild, serverQueue.songs[0]);
@@ -320,7 +320,7 @@ client.unload = command => {
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
-    msg.reply('Aleyküm selam,  hoş geldin ^^');
+    msg.reply('Aleyküm selam,  hoş geldin :hand_splayed: ');
   }
 });
 
@@ -406,15 +406,5 @@ if (channel.type != 'text') return;
   sChannel.send(`The channel ${channel} :warning: Kanalı Oluşturuldu :warning: `);
 
 });
-
-client.on('channelDelete', async channel => {
-
-  console.log(`${channel.name} :warning: Kanalı Silindi :warning: `);
-
-if (channel.type != 'text') return;
-  let sChannel = channel.guild.channels.find('name', 'log');
-  sChannel.send(`${channel} :warning: Kanalı Silindi :warning: `);
-
-})
 
 client.login(process.env.BOT_TOKEN);
