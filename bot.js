@@ -393,7 +393,7 @@ description: ('Bu kanal NSFW kanalı değil.')
       msg.guild.roles.find(s => s.name === rol).setColor("RANDOM")
       }, 9000);
   }
-});
+})
 
 client.on('channelCreate', async channel => {
 
