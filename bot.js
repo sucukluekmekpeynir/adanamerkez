@@ -405,7 +405,7 @@ if (channel.type != 'text') return;
 
 });
 
-const Discord = require('discord.js');
+const discord = require('discord.js');
 exports.run = (client, message, args) => {
 
   if (!message.guild) {
