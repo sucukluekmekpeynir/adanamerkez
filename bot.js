@@ -439,6 +439,7 @@ exports.help = {
   description: 'İstediğiniz kişiyi istediğiniz rolü verir.',
   usage: 'rol-ver [kullanıcı] [@rol]'
 };
+
 const client = new Discord.Client();
 const db = require('quick.db')
 client.on("message", async message => {
