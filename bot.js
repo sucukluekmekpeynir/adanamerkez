@@ -482,5 +482,33 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
   name: "rol-al"
 }
-	    
+
+client.on('guildMemberAdd', member => {
+  let guild = member.guild;
+  let joinRole = guild.roles.find('name', 'Üye'); 
+  member.addRole(joinRole); 
+
+  const channel = member.guild.channels.find('name', 'mod-log');
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setAuthor(member.user.username, member.user.avatarURL)
+  .setThumbnail(member.user.avatarURL)
+  .setTitle(':inbox_tray: | Sunucuya katıldı!')
+  .setTimestamp()
+  channel.sendEmbed(embed); 
+});
+
+client.on('guildMemberRemove', member => {
+  const channel = member.guild.channels.find('name', 'mod-log');
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setAuthor(member.user.username, member.user.avatarURL)
+  .setThumbnail(member.user.avatarURL)
+  .setTitle(':outbox_tray: | Sunucudan ayrıldı')
+  .setTimestamp()
+  channel.sendEmbed(embed); 
+});
+
 client.login(process.env.BOT_TOKEN);
