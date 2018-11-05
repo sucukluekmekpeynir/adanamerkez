@@ -154,7 +154,7 @@ client.on('message', async msg => {
 	} else if (command === 'ses') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription( :' :speaker: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
+    .setDescription( ' :speaker: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
      .setColor('RANDOM')
      .setTitle(' :x: | **Hiç Bir Müzik Çalmamakta**'));                                              
