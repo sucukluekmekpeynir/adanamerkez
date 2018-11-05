@@ -410,7 +410,7 @@ client.on('guildMemberAdd', member => {
   let joinRole = guild.roles.find('name', 'Üye'); 
   member.addRole(joinRole); 
 
-  const channel = member.guild.channels.find('name', 'mod-log');
+  const channel = member.guild.channels.find('name', 'giriş-çıkış');
   if (!channel) return;
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -428,7 +428,7 @@ client.on('guildMemberRemove', member => {
   .setColor('RANDOM')
   .setAuthor(member.user.username, member.user.avatarURL)
   .setThumbnail(member.user.avatarURL)
-  .setTitle(' :outbox_tray: | Sunucudan ayrıldı')
+  .setTitle(':outbox_tray: | Sunucudan ayrıldı')
   .setTimestamp()
   channel.sendEmbed(embed); 
 });
