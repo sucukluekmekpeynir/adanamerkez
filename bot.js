@@ -405,4 +405,16 @@ if (channel.type != 'text') return;
 
 });
 
+});
+
+client.on('channelDelete', async channel => {
+
+  console.log(`${channel.name} :warning: Kanalı Silindi :warning: `);
+
+if (channel.type != 'text') return;
+  let sChannel = channel.guild.channels.find('name', 'log');
+  sChannel.send(`${channel} :warning: Kanalı Silindi :warning: `);
+
+});
+
 client.login(process.env.BOT_TOKEN);
