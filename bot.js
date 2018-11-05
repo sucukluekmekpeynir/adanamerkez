@@ -401,7 +401,7 @@ client.on('channelCreate', async channel => {
 
 if (channel.type != 'text') return;
   let sChannel = channel.guild.channels.find('name', 'log');
-  sChannel.send ' + message.author.username + ' (`${channel} :warning: _Kanalı Oluşturuldu _ :warning: `);
+  sChannel.send (`${channel} :warning: _Kanalı Oluşturuldu _ :warning: `);
 
 });
 	    
