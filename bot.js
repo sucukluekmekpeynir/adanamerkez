@@ -436,12 +436,12 @@ client.on('guildMemberRemove', member => {
 client.on("message", msg => {
     const uyarıembed = new Discord.RichEmbed()
       .setColor(0x00AE86)
-      .setDescription(":crown: " + msg.author + "Reklam Yapmayı Kes :x: Seni Yetkililere Söyledim :angry: ")
+      .setDescription(":crown: " + msg.author + "Reklam Yapmayı Kes Seni Yetkililere Söyledim :angry: :rage: ")
 
 const dmembed = new Discord.RichEmbed()
     .setTitle("Sunucunda " + msg.author.tag + " reklam yapıyor!")
       .setColor(0x00AE86)
-      .setDescription("Sunucunda Reklam Yapıyor Uayar komutu ile kişiyi uyara bilirsin")
+      .setDescription(" " + msg.author.tag + " Sunucunda Reklam Yapıyor k?uyar komutu ile kişiyi uyara bilir k?ban Komutu İle Kişiyi Banlayabilirsin ")
     .addField("Kullanıcının mesajı:", "**" + msg.content + "**")
 
 if (msg.content.toLowerCase().match(/(discord\.gg\/)|(discordapp\.com\/invite\/)/g) && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
