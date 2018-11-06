@@ -20,9 +20,9 @@ client.user.setPresence({
         status: 'dnd'
     })
 var oyun = [
-        "k?yardım k?davet (k?yardım Komutu düzenleniyor.) ",
+        "k?yardım | k?davet ",
         "Kralbot Sürümü 2.0.0.0 Olarak Güncellenmiştir! https://kralbotdiscord.wordpress.com/",
-        "4 Kafadar Oyunda İzliyor  "             
+        "4 Kafadar Oyunda"             
     ];
 
     setInterval(function() {
