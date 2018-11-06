@@ -21,7 +21,7 @@ client.user.setPresence({
     })
 var oyun = [
         "k?yardım | k?davet ",
-        "Kralbot Sürümü 2.0.0.0 Olarak Güncellenmiştir! https://kralbotdiscord.wordpress.com/",
+        "Kralbot Sürümü 2.9.9.2 Olarak Güncellenmiştir! https://kralbotdiscord.wordpress.com/",
         "4 Kafadar Oyunda"             
     ];
 
