@@ -25,7 +25,7 @@ k?ses:         ^Oynatılan şarkının ses seviyesini ayarlar.^
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['müzik','music'],
   permLevel: 0
 };
 
