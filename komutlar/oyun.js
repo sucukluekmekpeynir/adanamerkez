@@ -27,6 +27,6 @@ exports.conf = {
 
 exports.help = {
   name: 'oyun',
-  description: 'Tüm komutları listeler. İsterseniz bir komut hakkında yardım eder..',
+  description: 'Oyun Komutlarını Listeler. İsterseniz bir komut hakkında yardım eder..',
   usage: 'oyun'
 };
