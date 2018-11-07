@@ -24,7 +24,7 @@ k?kilit:       ^Kanalı belirli bir süre kilitlemenizi sağlar.^
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['yetkili','onwer'],
   permLevel: 0
 };
 
