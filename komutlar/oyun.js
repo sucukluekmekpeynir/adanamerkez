@@ -21,7 +21,7 @@ k?battlefield:     ^Battlefield istatistiklerinizi gösterir.^
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['oyun'.'game'],
   permLevel: 0
 };
 
