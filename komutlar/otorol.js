@@ -28,6 +28,6 @@ exports.conf = {
 
 exports.help = {
     name: 'otorol',
-    description: 'Sunucuya birisi katıldıgında verilecek rolü ayarlar.',
-    usage: 'otorol<@rol>'
+    description: 'Sunucuya Biri Katıldığında Verilecek Rolü Ayarlar.',
+    usage: 'otorol <@rol>'
 }
