@@ -6,7 +6,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu kom
   
   let role = message.mentions.roles.first()
   
-    if (k?role) {
+    if (!role) {
         return message.reply("Bir rolü etiketle.")
     }
   
