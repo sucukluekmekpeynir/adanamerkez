@@ -319,8 +319,8 @@ client.unload = command => {
 };
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'sa') {
-    msg.reply('Aleyküm selam,  hoş geldin :hand_splayed: ');
+  if (msg.content.toLowerCase() === 'link') {
+    msg.reply('https://kralbotdiscord.wordpress.com/');
   }
 });
 
