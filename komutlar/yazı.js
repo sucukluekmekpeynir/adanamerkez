@@ -19,6 +19,6 @@ exports.conf = {
 
 exports.help = {
   name: 'yazı-kanalı-aç',
-  description: 'Bir yazı kanalı açar',
+  description: 'Bir yazı kanalı açmanızı sağlar',
   usage: 'yazı-kanalı-aç [açmak istediğiniz kanalın adı]'
 };
