@@ -433,6 +433,14 @@ client.on('guildMemberRemove', member => {
   channel.sendEmbed(embed); 
 });
 
+client.on('message', async msg => {
+  if (msg.content.toLowerCase() === 'sa') {
+    await msg.react(' :as: ');
+    msg.react(' :hg: ');
+    msg.reply('**Aleyküm Selam, Hoşgeldin Kardeşim**:two_hearts:')
+  }
+  });
+
 client.on("message", msg => {
     const uyarıembed = new Discord.RichEmbed()
       .setColor(0x00AE86)
